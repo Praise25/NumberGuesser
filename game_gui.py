@@ -196,6 +196,7 @@ def play_game():
                 if tries == 0:
                     maingameWindow.destroy()
                     game_over()
+                    new_game()
                 else:
                     tries = tries - 1
                     tries_left.set(tries)
@@ -204,8 +205,6 @@ def play_game():
                         errors.guess_error("Too low. Try again.", width=140)
                     elif num > answer:
                         errors.guess_error("Too high. Try again.", width=140)
-                    elif num == answer:
-                        errors.guess_error("Correct!!! The number I thought of was " + str(answer))
 
         except ValueError:
             errors.input_error("valid number")
